@@ -6,6 +6,7 @@ int anchoLienzo, altoLienzo ;
 
 public void setup(){
 size(440,420);
+noLoop();
 espacioEntreRect = 20;
 anchoRect = 40;
 altoRect  = 20;
@@ -17,11 +18,24 @@ coordenadasRect =new PVector(espacioEntreRect,espacioEntreRect);
 public void draw(){
 dibujarRectangulo();
 
+
 };
 public void dibujarRectangulo(){
- for(float x= coordenadasRect.x; (x< width); x += (anchoRect+espacioEntreRect)){
- //rect(coordenadasRect.x,coordenadasRect.y,anchoRect,altoRect ); // sogue dobijando un cuadro
- rect(x,coordenadasRect.y, anchoRect, altoRect); //cuidado no va ancho lienzo en vez de anchoderectangulo
+  color c1 = color(240, 170, 0);
+ for (float y= coordenadasRect.y; (y< height); y += (anchoRect+espacioEntreRect)){
+     for(float x= coordenadasRect.x; (x< width); x += (anchoRect+espacioEntreRect)){
+       //rect(coordenadasRect.x,coordenadasRect.y,anchoRect,altoRect ); // sogue dobijando un cuadro
+       //rect(x,coordenadasRect.y, anchoRect, altoRect); //cuidado no va ancho lienzo en vez de anchoderectangulo
+       stroke(#7C5615);
+       strokeWeight(3);
+       fill(c1);
+       rect(x,y, anchoRect, altoRect); //cuidado no va ancho lienzo en vez de anchoderectangulo
+       println(" " + coordenadasRect.x + " X= " + x + " Y= " + coordenadasRect.y +"  " + anchoRect + "  " + altoRect);
+       //rect(x,y,ancho,alto)
+       //rect(20.0,20.0,40,20)
+       //rect(60.0,20.0,40,20)
+       //rect(20.0,20.0,40,20)
+     }
  }
  // rect(coordenadasRect.x,coordenadasRect.y,anchoRect,altoRect ); // aqui dibuja un rectangulo meter dentro del for 
 
